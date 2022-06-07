@@ -46,6 +46,7 @@ export default {
     h3 {
         text-transform: uppercase;
         color: white;
+        margin-bottom: 1rem;
     }
 
     h4 {

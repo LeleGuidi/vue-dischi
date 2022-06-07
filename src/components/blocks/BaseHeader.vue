@@ -17,7 +17,7 @@ export default {
     padding: .625rem 1.25rem;
     font-size: 0;
     &_logo {
-        width: 5rem;
+        width: 3.5rem;
     }
 }
 </style>

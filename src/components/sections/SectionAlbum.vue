@@ -34,7 +34,7 @@ export default {
 .container_main {
     max-width: 68.75rem;
     margin: auto;
-    padding: 2rem 1.5rem;
+    padding: 1.5rem 1.5rem;
 
     .row_main {
         display: flex;
@@ -44,19 +44,19 @@ export default {
     }
 
     .col_main {
-        width: calc(100% / 2 - .75rem);
+        width: calc(100% / 5 - 1.2rem);
     }
 }
 
-@media screen and (min-width: 992px) {
+@media screen and (max-width: 36rem) {
     .col_main {
-        width: calc(100% / 5 - .75rem);
+        width: calc(100% / 2 - 1.2rem);
     }
 }
 
-@media screen and (min-width: 768px) {
+@media screen and (max-width: 48rem) {
     .col_main {
-        width: calc(100% / 3 - .75rem);
+        width: calc(100% / 3 - 1.2rem);
   }
 }
 </style>

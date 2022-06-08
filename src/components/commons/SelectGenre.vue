@@ -1,11 +1,12 @@
 <template>
-    <div class="select">
-        <label for="genre">Seleziona un genere interessato</label>
-        <select name="genre" id="genre">
-            <option value="">Tutti i generi</option>
-            <option v-for="(genre, index) in AllGenre" :key="index" :value="AllGenre">{{AllGenre}}</option>
-        </select>
-    </div>
+<div>
+    <label for="genre">Seleziona un genere</label>
+    <select v-model="DataShared.SelectedGenre" id="genre">
+        <option value>Tutti i generi</option>
+        <option v-for="(genre, index) in takeGenre" :key="index">{{genre}}</option>
+    </select>
+</div>
+    
 </template>
 
 <script>
@@ -15,21 +16,32 @@ export default {
     data() {
         return {
             DataShared,
-            AllGenre: [],
         }
     },
-    created() {
-        for (let i = 0; i < this.DataShared.Albums.length; i++) {
-            if (!this.AllGenre.includes(this.DataShared.Albums[i].genre)) {
-                this.AllGenre.push(this.DataShared.Albums[i].genre)
+    computed: {
+        takeGenre() {
+            let AllGenre = []
+            for (let i = 0; i < this.DataShared.Albums.length; i++) {
+                if (!AllGenre.includes(this.DataShared.Albums[i].genre)) {
+                    AllGenre.push(this.DataShared.Albums[i].genre)
+                }
             }
+            return AllGenre
         }
-        console.log(this.AllGenre)
-        
     }
 }
 </script>
 
 <style lang="scss" scoped>
-
+    select {
+        border: 0;
+        background-color: #1ed760;
+        color: #191716;
+        padding: 0.3rem 0.8rem;
+    }
+    label {
+        font-size: 1rem;
+        padding-right: 1.5rem;
+        color: white;
+    }
 </style>

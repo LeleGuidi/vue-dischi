@@ -1,7 +1,7 @@
 <template>
     <header class="header">
         <img src="../../assets/img/spotify-logo.png" alt="Logo Spotify" class="header_logo">
-        <SelectGenre/>
+        <SelectGenre class="header_select"/>
     </header>
 </template>
 
@@ -24,6 +24,7 @@ export default {
     font-size: 0;
     display: flex;
     justify-content: space-between;
+    align-items: center;
     &_logo {
         width: 3.5rem;
     }

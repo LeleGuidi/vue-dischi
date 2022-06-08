@@ -1,7 +1,7 @@
 <template>
     <section class="SectionAlbum container_main">
         <div class="row_main">
-            <CardAlbum class="col_main" v-for="(album, index) in albums" :key="index" :album="album"/>
+            <CardAlbum class="col_main" v-for="(album, index) in selectedAlbumGenre" :key="index" :album="album"/>
         </div>
     </section>
 </template>
@@ -18,7 +18,7 @@ export default {
     data() {
         return {
             albums: [],
-            DataShared
+            DataShared,
         }
     },
     created() {
@@ -27,6 +27,14 @@ export default {
             this.albums = response.data.response
             this.DataShared.Albums = response.data.response
         })
+    },
+    computed: {
+        selectedAlbumGenre() {
+            let selectGenre = []
+            selectGenre = this.albums.filter((elm) => {
+                return elm.genre.toLowerCase().includes(this.DataShared.SelectedGenre.toLowerCase())});
+            return selectGenre
+        }
     }
     
 }

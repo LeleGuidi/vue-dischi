@@ -46,17 +46,17 @@ export default {
     .col_main {
         width: calc(100% / 5 - 1.2rem);
     }
-}
-
-@media screen and (max-width: 36rem) {
-    .col_main {
-        width: calc(100% / 2 - 1.2rem);
+    @media screen and (max-width: 36rem) {
+        .col_main {
+            width: calc(100% / 2 - 1.2rem);
+        }
+    }
+    @media screen and (max-width: 48rem) {
+        .col_main {
+            width: calc(100% / 3 - 1.2rem);
+        }
     }
 }
 
-@media screen and (max-width: 48rem) {
-    .col_main {
-        width: calc(100% / 3 - 1.2rem);
-  }
-}
+
 </style>

@@ -16,6 +16,8 @@ export default {
     // Font size a 0 per rimuovere il bordo inferiore all'immagine
     padding: .625rem 1.25rem;
     font-size: 0;
+    display: flex;
+    justify-content: space-between;
     &_logo {
         width: 3.5rem;
     }

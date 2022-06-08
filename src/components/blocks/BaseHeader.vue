@@ -1,11 +1,17 @@
 <template>
     <header class="header">
         <img src="../../assets/img/spotify-logo.png" alt="Logo Spotify" class="header_logo">
+        <SelectGenre/>
     </header>
 </template>
 
 <script>
+import SelectGenre from '../commons/SelectGenre.vue'
+
 export default {
+    components: { 
+        SelectGenre 
+    },
     
 }
 </script>

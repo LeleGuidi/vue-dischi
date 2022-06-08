@@ -8,22 +8,24 @@
 
 <script>
 import CardAlbum from '../commons/CardAlbum.vue';
-import axios from 'axios'
+import axios from 'axios';
+import DataShared from '../../shared/DataShared.js';
 
 export default {
     components: { 
-        CardAlbum 
+        CardAlbum,
     },
     data() {
         return {
             albums: [],
+            DataShared
         }
     },
     created() {
         axios.get('https://flynn.boolean.careers/exercises/api/array/music')
         .then((response) => {
             this.albums = response.data.response
-            console.log(response.data.response)
+            this.DataShared.Albums = response.data.response
         })
     }
     
